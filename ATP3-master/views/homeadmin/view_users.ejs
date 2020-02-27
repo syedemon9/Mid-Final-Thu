@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User List</title>
+</head>
+<body>
+	<div>
+			<h2>User List</h2> 		
+	</div>
+
+	<a href="/admin">Back</a>|
+	<a href="/logout">Logout</a><br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Firts NAME</td>
+			<td>Last NAME</td>
+			<td>Username</td>
+			<td>PASSWORD</td>
+			<td>Email</td>
+			<td>Phone</td>
+			<td>Type</td>
+		</tr>
+	<% for(var i=0; i < userlist.length; i++){ %>
+		<tr>
+			<td><%= userlist[i].Cid %></td>
+			<td><%= userlist[i].Fname %></td>
+			<td><%= userlist[i].Lname %></td>
+			
+			<td><%= userlist[i].username %></td>
+			<td><%= userlist[i].password %></td>
+			<td><%= userlist[i].Email %></td>
+			<td><%= userlist[i].Phone %></td>
+			<td><%= userlist[i].Utid %></td>
+			<td>
+				<a href="/admin/edit/<%= userlist[i].Cid %>">EDIT</a> | 
+				<a href="/admin/delete/<%= userlist[i].Cid %>">DELETE</a> 
+			</td>
+		</tr>
+	<%  } %>
+	</table>
+
+</body>
+</html>
